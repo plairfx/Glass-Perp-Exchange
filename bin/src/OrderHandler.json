@@ -1,0 +1,1319 @@
+{
+    "contractName": "OrderHandler",
+    "abi": [
+        {
+            "inputs": [],
+            "name": "liquidateUser",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "bool",
+                            "name": "isLong",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "trader",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "amount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "market",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "address",
+                            "name": "collateralToken",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "stopLoss",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "takeProfit",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "limitOrder",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "leverage",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct OrderInfo.PerpPosition",
+                    "name": "perpPosition",
+                    "type": "tuple"
+                }
+            ],
+            "name": "longOrShort",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.8.30+commit.73712a01\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"liquidateUser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"components\":[{\"internalType\":\"bool\",\"name\":\"isLong\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"market\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"collateralToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"stopLoss\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"takeProfit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"limitOrder\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"leverage\",\"type\":\"uint256\"}],\"internalType\":\"struct OrderInfo.PerpPosition\",\"name\":\"perpPosition\",\"type\":\"tuple\"}],\"name\":\"longOrShort\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/administrator/Glass-Perp/solidity/src/OrderHandler.sol\":\"OrderHandler\"},\"evmVersion\":\"prague\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"/home/administrator/Glass-Perp/solidity/lib/openzeppelin-contracts/contracts/interfaces/IERC1363.sol\":{\"keccak256\":\"0xd5ea07362ab630a6a3dee4285a74cf2377044ca2e4be472755ad64d7c5d4b69d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://da5e832b40fc5c3145d3781e2e5fa60ac2052c9d08af7e300dc8ab80c4343100\",\"dweb:/ipfs/QmTzf7N5ZUdh5raqtzbM11yexiUoLC9z3Ws632MCuycq1d\"]},\"/home/administrator/Glass-Perp/solidity/lib/openzeppelin-contracts/contracts/interfaces/IERC165.sol\":{\"keccak256\":\"0x0afcb7e740d1537b252cb2676f600465ce6938398569f09ba1b9ca240dde2dfc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1c299900ac4ec268d4570ecef0d697a3013cd11a6eb74e295ee3fbc945056037\",\"dweb:/ipfs/Qmab9owJoxcA7vJT5XNayCMaUR1qxqj1NDzzisduwaJMcZ\"]},\"/home/administrator/Glass-Perp/solidity/lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol\":{\"keccak256\":\"0x1a6221315ce0307746c2c4827c125d821ee796c74a676787762f4778671d4f44\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1bb2332a7ee26dd0b0de9b7fe266749f54820c99ab6a3bcb6f7e6b751d47ee2d\",\"dweb:/ipfs/QmcRWpaBeCYkhy68PR3B4AgD7asuQk7PwkWxrvJbZcikLF\"]},\"/home/administrator/Glass-Perp/solidity/lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x74ed01eb66b923d0d0cfe3be84604ac04b76482a55f9dd655e1ef4d367f95bc2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5282825a626cfe924e504274b864a652b0023591fa66f06a067b25b51ba9b303\",\"dweb:/ipfs/QmeCfPykghhMc81VJTrHTC7sF6CRvaA1FXVq2pJhwYp1dV\"]},\"/home/administrator/Glass-Perp/solidity/lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0x982c5cb790ab941d1e04f807120a71709d4c313ba0bfc16006447ffbd27fbbd5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8150ceb4ac947e8a442b2a9c017e01e880b2be2dd958f1fa9bc405f4c5a86508\",\"dweb:/ipfs/QmbcBmFX66AY6Kbhnd5gx7zpkgqnUafo43XnmayAM7zVdB\"]},\"/home/administrator/Glass-Perp/solidity/lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0x8891738ffe910f0cf2da09566928589bf5d63f4524dd734fd9cedbac3274dd5c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://971f954442df5c2ef5b5ebf1eb245d7105d9fbacc7386ee5c796df1d45b21617\",\"dweb:/ipfs/QmadRjHbkicwqwwh61raUEapaVEtaLMcYbQZWs9gUkgj3u\"]},\"/home/administrator/Glass-Perp/solidity/src/OrderHandler.sol\":{\"keccak256\":\"0x9ff5d7c1918b27655affec965874d0f31dff2d522dd75f8242f15db2168942bf\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://95ef2d8d4f5963062af71a5aa446a25ae4d7095f7fd202b276fac96fb309beb1\",\"dweb:/ipfs/QmUuNL6LeWSuXV8CRseiepru5ghTtmNr3Kqg3u5aujgy2F\"]},\"/home/administrator/Glass-Perp/solidity/src/interfaces/IMarket.sol\":{\"keccak256\":\"0x518962af8916896ec0e6c8b05d349c6e0e9ed774ea17b59d277e96bdaf08a6b4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0a5af84d0d9bf53ef8f08c0e9770e8481ae7af6679359098ff41053cf50f0de8\",\"dweb:/ipfs/QmPMNiWb4ipYJSSAmx7ADt3Hh9tjP2wB2kfmhpvq8k5u6G\"]},\"/home/administrator/Glass-Perp/solidity/src/libraries/OrderInfo.sol\":{\"keccak256\":\"0x3e97978d4e6eefc2d772087903faf1dd4523dcb57e29f877dd3644edc6ed9a43\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2fb4093a1b64526f5f9c0aa800a88b281c7de7d95ddf140593bd72bfc79ba8f9\",\"dweb:/ipfs/QmWiWKbywEUrLbddBhkE6ZidcZmokQBE8biaCyAj3HbN5L\"]}},\"version\":1}",
+    "bytecode": "6080806040523460155761035d908161001a8239f35b5f80fdfe6080806040526004361015610012575f80fd5b5f3560e01c80637a977943146102f35763c3cdd16014610030575f80fd5b346101cf576101203660031901126101cf57610120810181811067ffffffffffffffff8211176102df5760405260043580151581036101cf578152602435906001600160a01b03821682036101cf57602081019182526044356040820181815290606435906001600160a01b03821682036101cf5760608401918252608435936001600160a01b03851685036101cf576080810194855260a43560a082015260c43560c082015260e43560e082015261010061010435910191818352151590816102d3575b501561028e57825190519081810291818304149015171561027a5790516040805163a1dc903160e01b81529291839060049082906001600160a01b03165afa9182156101db575f905f9361023f575b508110918215610235575b5050156101e6579051915190516040516323b872dd60e01b81526001600160a01b039283166004820152306024820152604481019190915291602091839160649183915f91165af180156101db576101a357005b6020813d6020116101d3575b816101bc60209383610305565b810103126101cf5751801515036101cf57005b5f80fd5b3d91506101af565b6040513d5f823e3d90fd5b60405162461bcd60e51b815260206004820152602160248201527f506f6f6c20646f6573206e6f74206861766520656e6f75676820746f6b656e736044820152602160f81b6064820152608490fd5b1190505f8061014f565b9250506040823d604011610272575b8161025b60409383610305565b810103126101cf5780602083519301519290610144565b3d915061024e565b634e487b7160e01b5f52601160045260245ffd5b60405162461bcd60e51b815260206004820152601d60248201527f416d6f756e74206f72206c6576657261676520697320696e76616c69640000006044820152606490fd5b9050606410155f6100f5565b634e487b7160e01b5f52604160045260245ffd5b346101cf575f3660031901126101cf57005b90601f8019910116810190811067ffffffffffffffff8211176102df5760405256fea2646970667358221220dacae71d8ddb1260bc8e192246e40becba223a17b5513d713d0ebbec3692d0f864736f6c634300081e0033",
+    "deployedBytecode": "6080806040526004361015610012575f80fd5b5f3560e01c80637a977943146102f35763c3cdd16014610030575f80fd5b346101cf576101203660031901126101cf57610120810181811067ffffffffffffffff8211176102df5760405260043580151581036101cf578152602435906001600160a01b03821682036101cf57602081019182526044356040820181815290606435906001600160a01b03821682036101cf5760608401918252608435936001600160a01b03851685036101cf576080810194855260a43560a082015260c43560c082015260e43560e082015261010061010435910191818352151590816102d3575b501561028e57825190519081810291818304149015171561027a5790516040805163a1dc903160e01b81529291839060049082906001600160a01b03165afa9182156101db575f905f9361023f575b508110918215610235575b5050156101e6579051915190516040516323b872dd60e01b81526001600160a01b039283166004820152306024820152604481019190915291602091839160649183915f91165af180156101db576101a357005b6020813d6020116101d3575b816101bc60209383610305565b810103126101cf5751801515036101cf57005b5f80fd5b3d91506101af565b6040513d5f823e3d90fd5b60405162461bcd60e51b815260206004820152602160248201527f506f6f6c20646f6573206e6f74206861766520656e6f75676820746f6b656e736044820152602160f81b6064820152608490fd5b1190505f8061014f565b9250506040823d604011610272575b8161025b60409383610305565b810103126101cf5780602083519301519290610144565b3d915061024e565b634e487b7160e01b5f52601160045260245ffd5b60405162461bcd60e51b815260206004820152601d60248201527f416d6f756e74206f72206c6576657261676520697320696e76616c69640000006044820152606490fd5b9050606410155f6100f5565b634e487b7160e01b5f52604160045260245ffd5b346101cf575f3660031901126101cf57005b90601f8019910116810190811067ffffffffffffffff8211176102df5760405256fea2646970667358221220dacae71d8ddb1260bc8e192246e40becba223a17b5513d713d0ebbec3692d0f864736f6c634300081e0033",
+    "sourceMap": "306:1263:6:-:0;;;;;;;;;;;;;;;;;",
+    "deployedSourceMap": "306:1263:6:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;306:1263:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;306:1263:6;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;306:1263:6;;;;;;;;;;;;;;;-1:-1:-1;;;;;306:1263:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;560:23;;:55;;;;306:1263;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;846:47:6;;306:1263;-1:-1:-1;306:1263:6;;;;;;-1:-1:-1;;;;;306:1263:6;846:47;;;;;;;306:1263;;;846:47;;;306:1263;912:19;;-1:-1:-1;912:42:6;;;;;306:1263;;;;;;;;;;;;;;-1:-1:-1;;;1039:106:6;;-1:-1:-1;;;;;306:1263:6;;;;1039:106;;306:1263;1118:4;306:1263;;;;;;;;;;;;;;;;;;;;;;;1039:106;;;;;;;;306:1263;1039:106;306:1263;1039:106;;306:1263;1039:106;;;;;;306:1263;1039:106;;;:::i;:::-;;;306:1263;;;;;;;;;;;;;;;;1039:106;;;-1:-1:-1;1039:106:6;;;306:1263;;;;;;;;;;;;-1:-1:-1;;;306:1263:6;;;;;;;;;;;;;;;;;-1:-1:-1;;;306:1263:6;;;;;;;912:42;935:19;;-1:-1:-1;912:42:6;;;;846:47;;;;306:1263;846:47;;306:1263;846:47;;;;;;306:1263;846:47;;;:::i;:::-;;;306:1263;;;;;;;;;;;846:47;;;;;;;-1:-1:-1;846:47:6;;306:1263;;;;;;;;;;;;;;;-1:-1:-1;;;306:1263:6;;;;;;;;;;;;;;;;;;;;560:55;587:28;;306:1263;587:28;;560:55;;;306:1263;;;;;;;;;;;;;;;;;;-1:-1:-1;;306:1263:6;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+    "sourcePath": "/home/administrator/Glass-Perp/solidity/src/OrderHandler.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.8.30+commit.73712a01"
+    },
+    "ast": {
+        "absolutePath": "/home/administrator/Glass-Perp/solidity/src/OrderHandler.sol",
+        "exportedSymbols": {
+            "IERC20": [
+                167
+            ],
+            "IMarket": [
+                772
+            ],
+            "OrderHandler": [
+                729
+            ],
+            "OrderInfo": [
+                820
+            ],
+            "SafeERC20": [
+                631
+            ]
+        },
+        "id": 730,
+        "license": "MIT",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "absolutePath": "/home/administrator/Glass-Perp/solidity/src/libraries/OrderInfo.sol",
+                "file": "./libraries/OrderInfo.sol",
+                "id": 646,
+                "nameLocation": "-1:-1:-1",
+                "nodeType": "ImportDirective",
+                "scope": 730,
+                "sourceUnit": 821,
+                "src": "33:52:6",
+                "symbolAliases": [
+                    {
+                        "foreign": {
+                            "id": 645,
+                            "name": "OrderInfo",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 820,
+                            "src": "41:9:6",
+                            "typeDescriptions": {}
+                        },
+                        "nameLocation": "-1:-1:-1"
+                    }
+                ],
+                "unitAlias": ""
+            },
+            {
+                "absolutePath": "/home/administrator/Glass-Perp/solidity/src/interfaces/IMarket.sol",
+                "file": "./interfaces/IMarket.sol",
+                "id": 648,
+                "nameLocation": "-1:-1:-1",
+                "nodeType": "ImportDirective",
+                "scope": 730,
+                "sourceUnit": 773,
+                "src": "86:49:6",
+                "symbolAliases": [
+                    {
+                        "foreign": {
+                            "id": 647,
+                            "name": "IMarket",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 772,
+                            "src": "94:7:6",
+                            "typeDescriptions": {}
+                        },
+                        "nameLocation": "-1:-1:-1"
+                    }
+                ],
+                "unitAlias": ""
+            },
+            {
+                "absolutePath": "/home/administrator/Glass-Perp/solidity/lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol",
+                "file": "/home/administrator/Glass-Perp/solidity/lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol",
+                "id": 651,
+                "nameLocation": "-1:-1:-1",
+                "nodeType": "ImportDirective",
+                "scope": 730,
+                "sourceUnit": 632,
+                "src": "136:143:6",
+                "symbolAliases": [
+                    {
+                        "foreign": {
+                            "id": 649,
+                            "name": "SafeERC20",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 631,
+                            "src": "144:9:6",
+                            "typeDescriptions": {}
+                        },
+                        "nameLocation": "-1:-1:-1"
+                    },
+                    {
+                        "foreign": {
+                            "id": 650,
+                            "name": "IERC20",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 167,
+                            "src": "155:6:6",
+                            "typeDescriptions": {}
+                        },
+                        "nameLocation": "-1:-1:-1"
+                    }
+                ],
+                "unitAlias": ""
+            },
+            {
+                "id": 652,
+                "literals": [
+                    "solidity",
+                    "0.8",
+                    ".30"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "281:23:6"
+            },
+            {
+                "abstract": false,
+                "baseContracts": [],
+                "canonicalName": "OrderHandler",
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "fullyImplemented": true,
+                "id": 729,
+                "linearizedBaseContracts": [
+                    729
+                ],
+                "name": "OrderHandler",
+                "nameLocation": "315:12:6",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "constant": false,
+                        "id": 657,
+                        "mutability": "mutable",
+                        "name": "positionInfo",
+                        "nameLocation": "389:12:6",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 729,
+                        "src": "334:67:6",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_PerpPosition_$808_storage_$",
+                            "typeString": "mapping(uint256 => struct OrderInfo.PerpPosition)"
+                        },
+                        "typeName": {
+                            "id": 656,
+                            "keyName": "_positionId",
+                            "keyNameLocation": "350:11:6",
+                            "keyType": {
+                                "id": 653,
+                                "name": "uint256",
+                                "nodeType": "ElementaryTypeName",
+                                "src": "342:7:6",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                }
+                            },
+                            "nodeType": "Mapping",
+                            "src": "334:54:6",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_PerpPosition_$808_storage_$",
+                                "typeString": "mapping(uint256 => struct OrderInfo.PerpPosition)"
+                            },
+                            "valueName": "",
+                            "valueNameLocation": "-1:-1:-1",
+                            "valueType": {
+                                "id": 655,
+                                "nodeType": "UserDefinedTypeName",
+                                "pathNode": {
+                                    "id": 654,
+                                    "name": "OrderInfo.PerpPosition",
+                                    "nameLocations": [
+                                        "365:9:6",
+                                        "375:12:6"
+                                    ],
+                                    "nodeType": "IdentifierPath",
+                                    "referencedDeclaration": 808,
+                                    "src": "365:22:6"
+                                },
+                                "referencedDeclaration": 808,
+                                "src": "365:22:6",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_struct$_PerpPosition_$808_storage_ptr",
+                                    "typeString": "struct OrderInfo.PerpPosition"
+                                }
+                            }
+                        },
+                        "visibility": "internal"
+                    },
+                    {
+                        "constant": false,
+                        "id": 659,
+                        "mutability": "mutable",
+                        "name": "positionId",
+                        "nameLocation": "422:10:6",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 729,
+                        "src": "414:18:6",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                        },
+                        "typeName": {
+                            "id": 658,
+                            "name": "uint256",
+                            "nodeType": "ElementaryTypeName",
+                            "src": "414:7:6",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                            }
+                        },
+                        "visibility": "internal"
+                    },
+                    {
+                        "body": {
+                            "id": 723,
+                            "nodeType": "Block",
+                            "src": "542:978:6",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "commonType": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                },
+                                                "id": 674,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "leftExpression": {
+                                                    "commonType": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    },
+                                                    "id": 669,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "leftExpression": {
+                                                        "expression": {
+                                                            "id": 666,
+                                                            "name": "perpPosition",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 662,
+                                                            "src": "560:12:6",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_struct$_PerpPosition_$808_memory_ptr",
+                                                                "typeString": "struct OrderInfo.PerpPosition memory"
+                                                            }
+                                                        },
+                                                        "id": 667,
+                                                        "isConstant": false,
+                                                        "isLValue": true,
+                                                        "isPure": false,
+                                                        "lValueRequested": false,
+                                                        "memberLocation": "573:6:6",
+                                                        "memberName": "amount",
+                                                        "nodeType": "MemberAccess",
+                                                        "referencedDeclaration": 795,
+                                                        "src": "560:19:6",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        }
+                                                    },
+                                                    "nodeType": "BinaryOperation",
+                                                    "operator": ">",
+                                                    "rightExpression": {
+                                                        "hexValue": "30",
+                                                        "id": 668,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": true,
+                                                        "kind": "number",
+                                                        "lValueRequested": false,
+                                                        "nodeType": "Literal",
+                                                        "src": "582:1:6",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_rational_0_by_1",
+                                                            "typeString": "int_const 0"
+                                                        },
+                                                        "value": "0"
+                                                    },
+                                                    "src": "560:23:6",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_bool",
+                                                        "typeString": "bool"
+                                                    }
+                                                },
+                                                "nodeType": "BinaryOperation",
+                                                "operator": "&&",
+                                                "rightExpression": {
+                                                    "commonType": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    },
+                                                    "id": 673,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "leftExpression": {
+                                                        "hexValue": "313030",
+                                                        "id": 670,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": true,
+                                                        "kind": "number",
+                                                        "lValueRequested": false,
+                                                        "nodeType": "Literal",
+                                                        "src": "587:3:6",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_rational_100_by_1",
+                                                            "typeString": "int_const 100"
+                                                        },
+                                                        "value": "100"
+                                                    },
+                                                    "nodeType": "BinaryOperation",
+                                                    "operator": ">=",
+                                                    "rightExpression": {
+                                                        "expression": {
+                                                            "id": 671,
+                                                            "name": "perpPosition",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 662,
+                                                            "src": "594:12:6",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_struct$_PerpPosition_$808_memory_ptr",
+                                                                "typeString": "struct OrderInfo.PerpPosition memory"
+                                                            }
+                                                        },
+                                                        "id": 672,
+                                                        "isConstant": false,
+                                                        "isLValue": true,
+                                                        "isPure": false,
+                                                        "lValueRequested": false,
+                                                        "memberLocation": "607:8:6",
+                                                        "memberName": "leverage",
+                                                        "nodeType": "MemberAccess",
+                                                        "referencedDeclaration": 807,
+                                                        "src": "594:21:6",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        }
+                                                    },
+                                                    "src": "587:28:6",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_bool",
+                                                        "typeString": "bool"
+                                                    }
+                                                },
+                                                "src": "560:55:6",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            },
+                                            {
+                                                "hexValue": "416d6f756e74206f72206c6576657261676520697320696e76616c6964",
+                                                "id": 675,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "string",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "617:31:6",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_stringliteral_1bdc1975775597af6585d1ec33297a80f3fa14c89592bd176ab795242b28a782",
+                                                    "typeString": "literal_string \"Amount or leverage is invalid\""
+                                                },
+                                                "value": "Amount or leverage is invalid"
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_stringliteral_1bdc1975775597af6585d1ec33297a80f3fa14c89592bd176ab795242b28a782",
+                                                    "typeString": "literal_string \"Amount or leverage is invalid\""
+                                                }
+                                            ],
+                                            "id": 665,
+                                            "name": "require",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [
+                                                4294967278,
+                                                4294967278,
+                                                4294967278
+                                            ],
+                                            "referencedDeclaration": 4294967278,
+                                            "src": "552:7:6",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                                                "typeString": "function (bool,string memory) pure"
+                                            }
+                                        },
+                                        "id": 676,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "552:97:6",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 677,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "552:97:6"
+                                },
+                                {
+                                    "assignments": [
+                                        679
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 679,
+                                            "mutability": "mutable",
+                                            "name": "collateral",
+                                            "nameLocation": "744:10:6",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 723,
+                                            "src": "736:18:6",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            },
+                                            "typeName": {
+                                                "id": 678,
+                                                "name": "uint256",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "736:7:6",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 685,
+                                    "initialValue": {
+                                        "commonType": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        },
+                                        "id": 684,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftExpression": {
+                                            "expression": {
+                                                "id": 680,
+                                                "name": "perpPosition",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 662,
+                                                "src": "757:12:6",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_PerpPosition_$808_memory_ptr",
+                                                    "typeString": "struct OrderInfo.PerpPosition memory"
+                                                }
+                                            },
+                                            "id": 681,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberLocation": "770:6:6",
+                                            "memberName": "amount",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 795,
+                                            "src": "757:19:6",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "BinaryOperation",
+                                        "operator": "*",
+                                        "rightExpression": {
+                                            "expression": {
+                                                "id": 682,
+                                                "name": "perpPosition",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 662,
+                                                "src": "779:12:6",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_PerpPosition_$808_memory_ptr",
+                                                    "typeString": "struct OrderInfo.PerpPosition memory"
+                                                }
+                                            },
+                                            "id": 683,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberLocation": "792:8:6",
+                                            "memberName": "leverage",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 807,
+                                            "src": "779:21:6",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "src": "757:43:6",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "736:64:6"
+                                },
+                                {
+                                    "assignments": [
+                                        687,
+                                        689
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 687,
+                                            "mutability": "mutable",
+                                            "name": "tokenA",
+                                            "nameLocation": "820:6:6",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 723,
+                                            "src": "812:14:6",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            },
+                                            "typeName": {
+                                                "id": 686,
+                                                "name": "uint256",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "812:7:6",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "visibility": "internal"
+                                        },
+                                        {
+                                            "constant": false,
+                                            "id": 689,
+                                            "mutability": "mutable",
+                                            "name": "tokenB",
+                                            "nameLocation": "836:6:6",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 723,
+                                            "src": "828:14:6",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            },
+                                            "typeName": {
+                                                "id": 688,
+                                                "name": "uint256",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "828:7:6",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 696,
+                                    "initialValue": {
+                                        "arguments": [],
+                                        "expression": {
+                                            "argumentTypes": [],
+                                            "expression": {
+                                                "arguments": [
+                                                    {
+                                                        "expression": {
+                                                            "id": 691,
+                                                            "name": "perpPosition",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 662,
+                                                            "src": "854:12:6",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_struct$_PerpPosition_$808_memory_ptr",
+                                                                "typeString": "struct OrderInfo.PerpPosition memory"
+                                                            }
+                                                        },
+                                                        "id": 692,
+                                                        "isConstant": false,
+                                                        "isLValue": true,
+                                                        "isPure": false,
+                                                        "lValueRequested": false,
+                                                        "memberLocation": "867:6:6",
+                                                        "memberName": "market",
+                                                        "nodeType": "MemberAccess",
+                                                        "referencedDeclaration": 797,
+                                                        "src": "854:19:6",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_address",
+                                                            "typeString": "address"
+                                                        }
+                                                    }
+                                                ],
+                                                "expression": {
+                                                    "argumentTypes": [
+                                                        {
+                                                            "typeIdentifier": "t_address",
+                                                            "typeString": "address"
+                                                        }
+                                                    ],
+                                                    "id": 690,
+                                                    "name": "IMarket",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 772,
+                                                    "src": "846:7:6",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_type$_t_contract$_IMarket_$772_$",
+                                                        "typeString": "type(contract IMarket)"
+                                                    }
+                                                },
+                                                "id": 693,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "kind": "typeConversion",
+                                                "lValueRequested": false,
+                                                "nameLocations": [],
+                                                "names": [],
+                                                "nodeType": "FunctionCall",
+                                                "src": "846:28:6",
+                                                "tryCall": false,
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_contract$_IMarket_$772",
+                                                    "typeString": "contract IMarket"
+                                                }
+                                            },
+                                            "id": 694,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberLocation": "875:16:6",
+                                            "memberName": "getTokenBalances",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 740,
+                                            "src": "846:45:6",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_external_view$__$returns$_t_uint256_$_t_uint256_$",
+                                                "typeString": "function () view external returns (uint256,uint256)"
+                                            }
+                                        },
+                                        "id": 695,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "846:47:6",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$_t_uint256_$_t_uint256_$",
+                                            "typeString": "tuple(uint256,uint256)"
+                                        }
+                                    },
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "811:82:6"
+                                },
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "commonType": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                },
+                                                "id": 704,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "leftExpression": {
+                                                    "commonType": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    },
+                                                    "id": 700,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "leftExpression": {
+                                                        "id": 698,
+                                                        "name": "tokenA",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 687,
+                                                        "src": "912:6:6",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        }
+                                                    },
+                                                    "nodeType": "BinaryOperation",
+                                                    "operator": ">",
+                                                    "rightExpression": {
+                                                        "id": 699,
+                                                        "name": "collateral",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 679,
+                                                        "src": "921:10:6",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        }
+                                                    },
+                                                    "src": "912:19:6",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_bool",
+                                                        "typeString": "bool"
+                                                    }
+                                                },
+                                                "nodeType": "BinaryOperation",
+                                                "operator": "||",
+                                                "rightExpression": {
+                                                    "commonType": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    },
+                                                    "id": 703,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "leftExpression": {
+                                                        "id": 701,
+                                                        "name": "tokenB",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 689,
+                                                        "src": "935:6:6",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        }
+                                                    },
+                                                    "nodeType": "BinaryOperation",
+                                                    "operator": ">",
+                                                    "rightExpression": {
+                                                        "id": 702,
+                                                        "name": "collateral",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 679,
+                                                        "src": "944:10:6",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        }
+                                                    },
+                                                    "src": "935:19:6",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_bool",
+                                                        "typeString": "bool"
+                                                    }
+                                                },
+                                                "src": "912:42:6",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            },
+                                            {
+                                                "hexValue": "506f6f6c20646f6573206e6f74206861766520656e6f75676820746f6b656e7321",
+                                                "id": 705,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "string",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "956:35:6",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_stringliteral_c8a88ab665bcb453a1507b0b6b72e3cd22ceb52ae2ddb9293571eb6aa1640cf2",
+                                                    "typeString": "literal_string \"Pool does not have enough tokens!\""
+                                                },
+                                                "value": "Pool does not have enough tokens!"
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_stringliteral_c8a88ab665bcb453a1507b0b6b72e3cd22ceb52ae2ddb9293571eb6aa1640cf2",
+                                                    "typeString": "literal_string \"Pool does not have enough tokens!\""
+                                                }
+                                            ],
+                                            "id": 697,
+                                            "name": "require",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [
+                                                4294967278,
+                                                4294967278,
+                                                4294967278
+                                            ],
+                                            "referencedDeclaration": 4294967278,
+                                            "src": "904:7:6",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                                                "typeString": "function (bool,string memory) pure"
+                                            }
+                                        },
+                                        "id": 706,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "904:88:6",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 707,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "904:88:6"
+                                },
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "expression": {
+                                                    "id": 713,
+                                                    "name": "perpPosition",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 662,
+                                                    "src": "1089:12:6",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_struct$_PerpPosition_$808_memory_ptr",
+                                                        "typeString": "struct OrderInfo.PerpPosition memory"
+                                                    }
+                                                },
+                                                "id": 714,
+                                                "isConstant": false,
+                                                "isLValue": true,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "memberLocation": "1102:6:6",
+                                                "memberName": "trader",
+                                                "nodeType": "MemberAccess",
+                                                "referencedDeclaration": 793,
+                                                "src": "1089:19:6",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            },
+                                            {
+                                                "arguments": [
+                                                    {
+                                                        "id": 717,
+                                                        "name": "this",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 4294967268,
+                                                        "src": "1118:4:6",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_contract$_OrderHandler_$729",
+                                                            "typeString": "contract OrderHandler"
+                                                        }
+                                                    }
+                                                ],
+                                                "expression": {
+                                                    "argumentTypes": [
+                                                        {
+                                                            "typeIdentifier": "t_contract$_OrderHandler_$729",
+                                                            "typeString": "contract OrderHandler"
+                                                        }
+                                                    ],
+                                                    "id": 716,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": true,
+                                                    "lValueRequested": false,
+                                                    "nodeType": "ElementaryTypeNameExpression",
+                                                    "src": "1110:7:6",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_type$_t_address_$",
+                                                        "typeString": "type(address)"
+                                                    },
+                                                    "typeName": {
+                                                        "id": 715,
+                                                        "name": "address",
+                                                        "nodeType": "ElementaryTypeName",
+                                                        "src": "1110:7:6",
+                                                        "typeDescriptions": {}
+                                                    }
+                                                },
+                                                "id": 718,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "kind": "typeConversion",
+                                                "lValueRequested": false,
+                                                "nameLocations": [],
+                                                "names": [],
+                                                "nodeType": "FunctionCall",
+                                                "src": "1110:13:6",
+                                                "tryCall": false,
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            },
+                                            {
+                                                "expression": {
+                                                    "id": 719,
+                                                    "name": "perpPosition",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 662,
+                                                    "src": "1125:12:6",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_struct$_PerpPosition_$808_memory_ptr",
+                                                        "typeString": "struct OrderInfo.PerpPosition memory"
+                                                    }
+                                                },
+                                                "id": 720,
+                                                "isConstant": false,
+                                                "isLValue": true,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "memberLocation": "1138:6:6",
+                                                "memberName": "amount",
+                                                "nodeType": "MemberAccess",
+                                                "referencedDeclaration": 795,
+                                                "src": "1125:19:6",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            ],
+                                            "expression": {
+                                                "arguments": [
+                                                    {
+                                                        "expression": {
+                                                            "id": 709,
+                                                            "name": "perpPosition",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 662,
+                                                            "src": "1046:12:6",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_struct$_PerpPosition_$808_memory_ptr",
+                                                                "typeString": "struct OrderInfo.PerpPosition memory"
+                                                            }
+                                                        },
+                                                        "id": 710,
+                                                        "isConstant": false,
+                                                        "isLValue": true,
+                                                        "isPure": false,
+                                                        "lValueRequested": false,
+                                                        "memberLocation": "1059:15:6",
+                                                        "memberName": "collateralToken",
+                                                        "nodeType": "MemberAccess",
+                                                        "referencedDeclaration": 799,
+                                                        "src": "1046:28:6",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_address",
+                                                            "typeString": "address"
+                                                        }
+                                                    }
+                                                ],
+                                                "expression": {
+                                                    "argumentTypes": [
+                                                        {
+                                                            "typeIdentifier": "t_address",
+                                                            "typeString": "address"
+                                                        }
+                                                    ],
+                                                    "id": 708,
+                                                    "name": "IERC20",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 167,
+                                                    "src": "1039:6:6",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_type$_t_contract$_IERC20_$167_$",
+                                                        "typeString": "type(contract IERC20)"
+                                                    }
+                                                },
+                                                "id": 711,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "kind": "typeConversion",
+                                                "lValueRequested": false,
+                                                "nameLocations": [],
+                                                "names": [],
+                                                "nodeType": "FunctionCall",
+                                                "src": "1039:36:6",
+                                                "tryCall": false,
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_contract$_IERC20_$167",
+                                                    "typeString": "contract IERC20"
+                                                }
+                                            },
+                                            "id": 712,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberLocation": "1076:12:6",
+                                            "memberName": "transferFrom",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 166,
+                                            "src": "1039:49:6",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$",
+                                                "typeString": "function (address,address,uint256) external returns (bool)"
+                                            }
+                                        },
+                                        "id": 721,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "1039:106:6",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bool",
+                                            "typeString": "bool"
+                                        }
+                                    },
+                                    "id": 722,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "1039:106:6"
+                                }
+                            ]
+                        },
+                        "functionSelector": "c3cdd160",
+                        "id": 724,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "longOrShort",
+                        "nameLocation": "479:11:6",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 663,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 662,
+                                    "mutability": "mutable",
+                                    "name": "perpPosition",
+                                    "nameLocation": "521:12:6",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 724,
+                                    "src": "491:42:6",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_struct$_PerpPosition_$808_memory_ptr",
+                                        "typeString": "struct OrderInfo.PerpPosition"
+                                    },
+                                    "typeName": {
+                                        "id": 661,
+                                        "nodeType": "UserDefinedTypeName",
+                                        "pathNode": {
+                                            "id": 660,
+                                            "name": "OrderInfo.PerpPosition",
+                                            "nameLocations": [
+                                                "491:9:6",
+                                                "501:12:6"
+                                            ],
+                                            "nodeType": "IdentifierPath",
+                                            "referencedDeclaration": 808,
+                                            "src": "491:22:6"
+                                        },
+                                        "referencedDeclaration": 808,
+                                        "src": "491:22:6",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_struct$_PerpPosition_$808_storage_ptr",
+                                            "typeString": "struct OrderInfo.PerpPosition"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "490:44:6"
+                        },
+                        "returnParameters": {
+                            "id": 664,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "542:0:6"
+                        },
+                        "scope": 729,
+                        "src": "470:1050:6",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 727,
+                            "nodeType": "Block",
+                            "src": "1558:2:6",
+                            "statements": []
+                        },
+                        "functionSelector": "7a977943",
+                        "id": 728,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "liquidateUser",
+                        "nameLocation": "1535:13:6",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 725,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "1548:2:6"
+                        },
+                        "returnParameters": {
+                            "id": 726,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "1558:0:6"
+                        },
+                        "scope": 729,
+                        "src": "1526:34:6",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    }
+                ],
+                "scope": 730,
+                "src": "306:1263:6",
+                "usedErrors": [],
+                "usedEvents": []
+            }
+        ],
+        "src": "33:1537:6"
+    },
+    "functionHashes": {
+        "liquidateUser()": "7a977943",
+        "longOrShort((bool,address,uint256,address,address,uint256,uint256,uint256,uint256))": "c3cdd160"
+    },
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "172200",
+            "executionCost": "220",
+            "totalCost": "172420"
+        },
+        "external": {
+            "liquidateUser()": "130",
+            "longOrShort((bool,address,uint256,address,address,uint256,uint256,uint256,uint256))": "infinite"
+        }
+    }
+}
