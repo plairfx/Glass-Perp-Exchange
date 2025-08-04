@@ -32,6 +32,18 @@ you can essentially compare this to a router.
 The main contract of this protocol which is used for swaps and deposting/withdrawing liqudity.
 
 
+#### MarketFactory.sol
+Used to deploy markets in the protocol.
+
+
 #### OrderHandler.sol
 This handles the perputual trades (long or shorts), you can open your position with your chosen leverage/depositAmount and close it or and liquidate positions you deem to be profitable for you.
+
+
+### Features Missing 
+- Swap Fee
+- Market Impact Fee
+- Funding Fee
+- Borrow Fee
+
 
